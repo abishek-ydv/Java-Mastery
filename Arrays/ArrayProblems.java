@@ -1,3 +1,4 @@
+package Arrays;
 import java.util.Arrays;
 
 public class ArrayProblems {
@@ -129,7 +130,7 @@ public class ArrayProblems {
         return maxProfit;
     }
 
-    public int maxProfit(int[] prices) {
+    public int maxProfitGFG2(int[] prices) {
         int maxProfit = 0;
         int buyPrice = 0;
         int sellPrice = 0;
