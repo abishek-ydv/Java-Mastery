@@ -1,4 +1,3 @@
-package Arrays;
 import java.util.Arrays;
 public class ArraysMethods {
     /* In this we are gonna learn Arrays method in Java and we will also learn what is diff. between shallow copy and deep copy. */

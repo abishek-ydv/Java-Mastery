@@ -1,6 +1,5 @@
-package Arrays;
 import java.util.Scanner;
-public class Arrays{
+public class ArraysBasics{
 
     // main method.
     public static void main(String[] args){

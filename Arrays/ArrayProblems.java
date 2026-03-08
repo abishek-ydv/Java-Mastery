@@ -1,4 +1,3 @@
-package Arrays;
 import java.util.Arrays;
 
 public class ArrayProblems {
@@ -147,6 +146,16 @@ public class ArrayProblems {
         return maxProfit;
     }
 
+    public static int[][] sumOfSquareMatrix(int[][] squareMatrixOne, int[][] squareMatrixTwo){
+        int[][] sum = new int[squareMatrixOne.length][squareMatrixOne[0].length];
+        for(int i = 0; i < squareMatrixOne.length; i++){
+            for(int j = 0; j < squareMatrixOne[0].length; j++){
+                sum[i][j] = squareMatrixOne[i][j] + squareMatrixTwo[i][j];
+            }
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
         // System.out.println(arraySubset(new int[]{1,2,3,4,5,6}, new int[]{1,2,4,69,3}));
         // System.out.println(arraySubsetSorted(new int[]{1,2,3,4 ,5,6,7,8}, new int[]{1,2,4,3}));
@@ -169,6 +178,8 @@ public class ArrayProblems {
 
         // System.out.println(prefixSumArray(arr, 4));
 
-        System.out.println(equalSumGFG(new int[] {1,2,1,2}));
+        // System.out.println(equalSumGFG(new int[] {1,2,1,2}));
+
+        System.out.println(Arrays.deepToString(sumOfSquareMatrix(new int[][]{{1,2},{3,4}}, new int[][]{{4,3},{2,1}})));
     }
 }
