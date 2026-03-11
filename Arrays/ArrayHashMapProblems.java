@@ -97,11 +97,35 @@ public class ArrayHashMapProblems {
        /* Instead of using Iterator we can pas they keySet */
         return new ArrayList<>(map.keySet());
     }
+
+    public int[] replaceWithRankGFG(int arr[], int N) {
+        // code here
+        Map<Integer, Integer> map = new HashMap<>();
+        int[] arrx = arr.clone();
+        Arrays.sort(arrx);
+        int lastElement = -1;
+        int ranker = 0;
+        for(int ele : arrx){
+            if(lastElement != ele){
+                ranker++;
+            }
+            map.put(ele, ranker);
+            lastElement = ele;
+            System.out.println(ranker);
+        }
+        System.out.println(map);
+
+        for(int i = 0; i < arr.length; i++){
+                arr[i] = map.get(arr[i]);
+        }
+        return arr;
+    }
     
     public static void main(String[] args){
         /* In this we are gonna solve array problems with the help of hashmap. like counting frequency of a number, etc. */
         ArrayHashMapProblems aHMP = new ArrayHashMapProblems();
         System.out.println(Arrays.deepToString(aHMP.countFrequency(new int[] {1,2,3,2,1,4,5,2,3,6,5,6,6,7})));
         System.out.println(aHMP.firstNonRepeatingGFG(new int[] {1,2,3,-1,-2,1,2,-1,-2,4}));
+        System.out.println(Arrays.toString(aHMP.replaceWithRankGFG(new int[] {20, 15, 26, 2, 98, 6}, 6)));
     }
 }

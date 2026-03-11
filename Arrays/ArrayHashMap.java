@@ -1,3 +1,4 @@
+// import java.util.*;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -105,6 +106,8 @@ public class ArrayHashMap {
         /* putAll(otherMap) : This method is used to take every entry from a map and put it into another. and if they key is two entry have same key it will take the value from the new map.*/
         studentData.putAll(constants);
         studentData.replaceAll((key, value) -> value.toUpperCase());
+        System.out.println(studentData);
+        studentData.clear();      
         System.out.println(studentData);      
     }
 }

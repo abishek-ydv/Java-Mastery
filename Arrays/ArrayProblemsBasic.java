@@ -1,5 +1,5 @@
 import java.util.Arrays;
-public class BasicArrayProblems{
+public class ArrayProblemsBasic{
 
     public int sumArray(int[] arr){
         int sum = 0;
@@ -178,7 +178,7 @@ public class BasicArrayProblems{
 
         int[] arr = {1,2,3,4,5,6,7,8,9};
         int[] jumbledArray = {1,0,5,2,3,3,6,9,8,2,1,2,5,7,4,4,4};
-        BasicArrayProblems sa = new BasicArrayProblems();
+        ArrayProblemsBasic sa = new ArrayProblemsBasic();
         System.out.println(sa.sumArray(arr));
         System.out.println(sa.meanArray(arr));
         System.out.println(sa.largestElementBF(arr));

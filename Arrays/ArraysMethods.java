@@ -34,7 +34,6 @@ public class ArraysMethods {
         strArray[3] = "forth";
         strArray[4] = "fifth";
         /* strArray[5] - this will return an error cause we are trying to assign value to the index which do not exist in the array. */
-        
         /* Now, we will see Array.copyOf() method.*/
         String[] str2 = Arrays.copyOf(strArray, 2); // this will enter empty elements for indexes which are not present in it.
         System.out.println(Arrays.toString(str2));

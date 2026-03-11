@@ -123,7 +123,7 @@ public class ArrayProblems {
         int maxProfit = 0;
         int minBuyPrice = prices[0];
         for(int i = 0; i < prices.length; i++){
-            if(prices[i] < minBuyPrice) minBuyPrice = prices[i]; //No need to worky of deals cause minBuyPrices will make sure only better deals ahead. previous numbers have no impact.
+            if(prices[i] < minBuyPrice) minBuyPrice = prices[i]; //No need to worry of deals cause minBuyPrices will make sure only better deals ahead. previous numbers have no impact.
             if(maxProfit < (prices[i] - minBuyPrice)) maxProfit = prices[i] - minBuyPrice;
         }
         return maxProfit;
@@ -156,6 +156,39 @@ public class ArrayProblems {
         return sum;
     }
 
+    public static int[] arrayRank(int[] arr){
+        int[] sorted = arr.clone();
+        Arrays.sort(sorted);
+        int uniquePointer = 0;
+        for(int i = 0; i < sorted.length; i++){
+            if(i == 0 || sorted[i] != sorted[i-1]){
+                sorted[uniquePointer] = sorted[i];
+                uniquePointer++;
+            }
+        }
+
+        for(int i = uniquePointer; i < sorted.length; i++){
+            sorted[i] = -1;
+        }
+        System.out.println(Arrays.toString(sorted));
+        for(int i = 0; i < arr.length; i++){
+            int index = Arrays.binarySearch(sorted, 0, uniquePointer, arr[i]);
+            arr[i] = index+1;
+        }
+        return arr;
+    }
+
+    public static int kadanesAlgorithm(int[] arr){
+        int maxSoFar = 0;
+        int sumSoFar = 0;
+        for(int ele : arr){
+            sumSoFar = Math.max(ele, sumSoFar+ele);
+            maxSoFar = Math.max(sumSoFar, maxSoFar);
+            System.out.println(String.format("sum so far %d | max so far %d", sumSoFar, maxSoFar));
+        }
+        return maxSoFar;
+    }
+
     public static void main(String[] args) {
         // System.out.println(arraySubset(new int[]{1,2,3,4,5,6}, new int[]{1,2,4,69,3}));
         // System.out.println(arraySubsetSorted(new int[]{1,2,3,4 ,5,6,7,8}, new int[]{1,2,4,3}));
@@ -180,6 +213,8 @@ public class ArrayProblems {
 
         // System.out.println(equalSumGFG(new int[] {1,2,1,2}));
 
-        System.out.println(Arrays.deepToString(sumOfSquareMatrix(new int[][]{{1,2},{3,4}}, new int[][]{{4,3},{2,1}})));
+        // System.out.println(Arrays.deepToString(sumOfSquareMatrix(new int[][]{{1,2},{3,4}}, new int[][]{{4,3},{2,1}})));
+        System.out.println(Arrays.toString(arrayRank(new int[] {3,4,4,5})));
+        System.out.println(kadanesAlgorithm(new int[] {5, -3, 7, 6, 5}));
     }
 }
