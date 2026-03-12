@@ -62,8 +62,45 @@ public class ArraySlidingWindow {
         return distinctCountArr;
     }
 
+    public static List<Integer> firstNegInt(int arr[], int k) {
+        List<Integer> negativeList = new ArrayList<>();
+        List<Integer> indexList = new ArrayList<>();
+        int pointer = 0;
+        
+        for(int i = 0; i < arr.length; i++){
+            
+            if(arr[i] < 0){
+                indexList.add(i);
+            }
+            if(pointer < indexList.size() && indexList.get(pointer) <= i-k){
+                pointer++;
+            }
+            if(i >= k-1){
+                if(pointer < indexList.size()){
+                    negativeList.add(arr[indexList.get(pointer)]);
+                } else{
+                    negativeList.add(0);
+                }
+            }
+        }
+        return negativeList;
+        }
+
+    public static int longestSubarray(int arr[]) {
+    int count = 0; 
+    int max = 0;
+    for(int i = 0; i < arr.length; i++){
+        if(arr[i] < 0)
+            count = 0;
+        else if(arr[i] >= 0)
+            count++;
+        max = Math.max(count, max);
+    }
+    return max;
+        
+    }
     public static void main(String[] args) {
         System.out.println(maxSubArraySumGFG(new int[] {8819, 674, 8816, 7705, 5699, 5383, 6177, 2113, 1992}, 1));
-        System.out.println(firstNegIntGFG(new int[] {-8, 2, 3, -6, 10}, 2));
+        System.out.println(firstNegInt(new int[] {-8, 2, 3, -6, 10}, 2));
     }
 }
