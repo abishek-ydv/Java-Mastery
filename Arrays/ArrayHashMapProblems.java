@@ -124,8 +124,8 @@ public class ArrayHashMapProblems {
     public static void main(String[] args){
         /* In this we are gonna solve array problems with the help of hashmap. like counting frequency of a number, etc. */
         ArrayHashMapProblems aHMP = new ArrayHashMapProblems();
-        System.out.println(Arrays.deepToString(aHMP.countFrequency(new int[] {1,2,3,2,1,4,5,2,3,6,5,6,6,7})));
-        System.out.println(aHMP.firstNonRepeatingGFG(new int[] {1,2,3,-1,-2,1,2,-1,-2,4}));
-        System.out.println(Arrays.toString(aHMP.replaceWithRankGFG(new int[] {20, 15, 26, 2, 98, 6}, 6)));
+        // System.out.println(Arrays.deepToString(aHMP.countFrequency(new int[] {1,2,3,2,1,4,5,2,3,6,5,6,6,7})));
+        System.out.println(aHMP.firstNonRepeatingGFG(new int[] {1,1,2,3,3,4}));
+        // System.out.println(Arrays.toString(aHMP.replaceWithRankGFG(new int[] {20, 15, 26, 2, 98, 6}, 6)));
     }
 }

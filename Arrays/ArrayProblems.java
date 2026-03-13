@@ -34,7 +34,7 @@ public class ArrayProblems {
                 i++;
                 j++;
                 continue;
-            } else if(key[j] < arr[i]) return false;
+            } else if(arr[i] > key[j]) return false;
             else i++;
         }
 
@@ -59,6 +59,7 @@ public class ArrayProblems {
     }
 
     public static int[] rotateArrayFor (int[] arr, int d){
+        d = d % arr.length;
         for(int i = 0; i < d; i++){
             for(int j = 0; j < arr.length -1 ; j++){
                 int temp = arr[j];
@@ -124,7 +125,8 @@ public class ArrayProblems {
         int minBuyPrice = prices[0];
         for(int i = 0; i < prices.length; i++){
             if(prices[i] < minBuyPrice) minBuyPrice = prices[i]; //No need to worry of deals cause minBuyPrices will make sure only better deals ahead. previous numbers have no impact.
-            if(maxProfit < (prices[i] - minBuyPrice)) maxProfit = prices[i] - minBuyPrice;
+            int currentProfit = prices[i] - minBuyPrice;
+            if(maxProfit < (currentProfit)) maxProfit = currentProfit;
         }
         return maxProfit;
     }
@@ -191,7 +193,7 @@ public class ArrayProblems {
 
     public static void main(String[] args) {
         // System.out.println(arraySubset(new int[]{1,2,3,4,5,6}, new int[]{1,2,4,69,3}));
-        // System.out.println(arraySubsetSorted(new int[]{1,2,3,4 ,5,6,7,8}, new int[]{1,2,4,3}));
+        System.out.println(arraySubsetSorted(new int[]{1,2,3,4,6,7,8, 34}, new int[]{1,2,5}));
         // System.out.println(Arrays.toString(rotateArray(new int[] {1,2,3,4,5}, 2))); 
 
         /* For counter clockwise : ((i+k)%n) | For clockwise : (i+(n-k))%n */        
@@ -215,6 +217,6 @@ public class ArrayProblems {
 
         // System.out.println(Arrays.deepToString(sumOfSquareMatrix(new int[][]{{1,2},{3,4}}, new int[][]{{4,3},{2,1}})));
         System.out.println(Arrays.toString(arrayRank(new int[] {3,4,4,5})));
-        System.out.println(kadanesAlgorithm(new int[] {5, -3, 7, 6, 5}));
+        System.out.println(kadanesAlgorithm(new int[] {-5, 3, -1, 6, 5}));
     }
 }
