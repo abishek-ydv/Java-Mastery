@@ -140,6 +140,20 @@ public class ArraySlidingWindow {
         return result;
     }
 
+    public static ArrayList<Integer> maxOfSubarraysGFG(int[] arr, int k) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int max = 0;
+        for(int i = 0; i < arr.length-k +1 ; i++){ 
+             max = arr[i];
+            for(int j = i; j < i+k; j++){
+                max = Math.max(max, arr[j]);
+                System.out.println(max);
+            }
+                list.add(max);
+        }
+        return list;
+    }
+
     public static int totalFruit(int[] fruits) {
         int right = 0;
         int left = 0;
@@ -181,5 +195,8 @@ public class ArraySlidingWindow {
         System.out.println(firstNegInt(new int[] {-8, 2, 3, -6, 10}, 2));
         System.out.println(smallestSubWithSum(51, new int[] {1, 4, 45, 6, 0, 19}));
         System.out.println(totalFruit(new int[] {3,3,3,1,2,1,1,2,3,3,4}));
+        System.out.println(totalFruit904LC(new int[] {3,3,3,1,2,1,1,2,3,3,4}));
+        System.out.println(maxOfSubarraysGFG(new int[] {1, 2, 3, 1, 4, 5, 2, 3, 6}, 3));
+
     }
 }
