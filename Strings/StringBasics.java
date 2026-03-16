@@ -25,5 +25,12 @@ public class StringBasics {
         String substring = name.substring(5);
         System.out.println("Substring: " + substring);
 
+        // String comparison
+        String anotherName = "Abhishek Yadav";
+        boolean isEqual = name.equals(anotherName);
+        System.out.println("Is Equal: " + isEqual);
+
+        boolean isEqualIgnoreCase = name.equalsIgnoreCase("abhishek yadav");
+        System.out.println("Is Equal Ignore Case: " + isEqualIgnoreCase);
     }
 }
